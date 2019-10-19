@@ -22,7 +22,10 @@ class Item extends React.Component {
 class Item extends React.Component {
   render() {
     return(
-      <li>{this.props.item}</li>
+      <li>
+        {this.props.item}
+        <button onClick={ () => alert('remove item!') }>Remove</button>
+      </li>
     );
   }
 }
