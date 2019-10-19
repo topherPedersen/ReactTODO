@@ -4,7 +4,7 @@ import List from './List';
 class Todo extends React.Component {
   constructor(props) {
     super(props);
-    this.removeItemFromList = this.removeItemFromList.bind(this);
+    //this.removeItemFromList = this.removeItemFromList.bind(this);
     this.state = {
       items: new Array(), 
     };
@@ -21,28 +21,14 @@ class Todo extends React.Component {
     });
   }
 
-  removeItemFromList(itemName) {
-    /*
-    if (itemName) {
-      alert("remove item from list: " + itemName);
-    } else {
-      alert("remove something?");
-    }
-    */
-    alert(itemName);
-  }
-
   render() {
     return (
       <div>
         <h1>React TODO List App</h1>
         <ol>
-          <List items={this.state.items} removeItemFromList={ () => this.removeItemFromList() } />
+          <List items={this.state.items} />
         </ol>
         <button onClick={ () => this.addItemToList() }>Add Item to List</button>
-        <br/>
-        <button onClick={ () => this.removeItemFromList("eeep") }>Test Function</button>
-        
       </div>
     );
   }
