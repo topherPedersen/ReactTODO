@@ -23,12 +23,11 @@ class Todo extends React.Component {
   render() {
     return (
       <div>
-        <h1>ReactTODO</h1>
-        <h2>work in progress?</h2>
+        <h1>React TODO List App</h1>
         <ol>
           <List items={this.state.items} />
         </ol>
-        <button onClick={ () => this.addItemToList() }>Add Item to TODO List</button>
+        <button onClick={ () => this.addItemToList() }>Add Item to List</button>
       </div>
     );
   }
