@@ -1,14 +1,22 @@
 import React from 'react';
-import List from './List';
 
-class Todo extends React.Component {
+class List extends React.Component {
+  /*
   constructor(props) {
     super(props);
     this.state = {
       items: new Array(), 
     };
   }
+  */
 
+  render() {
+    return(
+      <li>eeeeeeep! li</li>
+    );
+  }
+
+  /*
   addItemToList() {
     var newItem = prompt("Add entry to list: ");
     var newList = this.state.items.slice();
@@ -19,19 +27,22 @@ class Todo extends React.Component {
       items: newList,
     });
   }
+  */
 
+  /*
   render() {
     return (
       <div>
         <h1>ReactTODO</h1>
         <h2>work in progress?</h2>
         <ol>
-          <List items={this.state.items} />
+          <Items />
         </ol>
         <button onClick={ () => this.addItemToList() }>Add Item to TODO List</button>
       </div>
     );
   }
+  */
 }
 
-export default Todo;
+export default List;
