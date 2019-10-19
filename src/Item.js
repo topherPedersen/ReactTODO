@@ -24,7 +24,9 @@ class Item extends React.Component {
     return(
       <li>
         {this.props.item}
-        <button onClick={ () => alert('remove item!') }>Remove</button>
+        &nbsp;
+        &nbsp;
+        <button onClick={ () => this.props.removeItemFromList('hardcoded-item') }>Remove</button>
       </li>
     );
   }
