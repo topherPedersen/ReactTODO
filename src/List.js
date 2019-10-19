@@ -16,7 +16,7 @@ class List extends React.Component {
     // REFERENCE (LOOPS WITH JSX): https://flaviocopes.com/react-how-to-loop/
 
     for (var i = 0; i < this.props.items.length; i++) {
-      listItemElements.push(<li>this.props.items[i]</li>);
+      listItemElements.push(<li>{this.props.items[i]}</li>);
     }
 
     return(
