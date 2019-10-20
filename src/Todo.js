@@ -1,6 +1,12 @@
 import React from 'react';
 import List from './List';
 import './Todo.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class Todo extends React.Component {
   constructor(props) {
@@ -45,16 +51,51 @@ class Todo extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>React TODO List App</h1>
-        <ol>
-          <List 
-            items={this.state.items} 
-            removeItemFromList={ (itemToBeRemoved) => this.removeItemFromList(itemToBeRemoved) } 
-          />
-        </ol>
-        <button onClick={ () => this.addItemToList() }>Add Item to List</button>
-      </div>
+      <Router>
+        <div>
+
+          <h1>React TODO List App</h1>
+          <nav>
+            <Link to="/">
+              <button>TODO List</button>
+            </Link>
+            <Link to="/dank-memes">
+              <button>Dank Memes</button>
+            </Link>
+            <Link to="/cat-videos">
+              <button>Cat Videos</button>
+            </Link>
+          </nav>
+
+          <Switch>
+
+            <Route path="/">
+              <ol>
+                <List 
+                  items={this.state.items} 
+                  removeItemFromList={ (itemToBeRemoved) => this.removeItemFromList(itemToBeRemoved) } 
+                />
+              </ol>
+              <button onClick={ () => this.addItemToList() }>Add Item to List</button>
+            </Route>
+
+            <Route path="/dank-memes">
+              <div>
+                <h3>Dank Memes Go Here</h3>
+              </div>
+            </Route>
+
+            <Route path="/cat-videos">
+              <div>
+                <h3>Cat Videos Go Here</h3>
+              </div>
+            </Route>
+
+
+          </Switch>
+
+        </div>
+      </Router>
     );
   }
 }
