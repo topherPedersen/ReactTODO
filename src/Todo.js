@@ -21,12 +21,19 @@ class Todo extends React.Component {
     });
   }
 
+  removeItemFromList(itemToBeRemoved) {
+    alert(itemToBeRemoved);
+  }
+
   render() {
     return (
       <div>
         <h1>React TODO List App</h1>
         <ol>
-          <List items={this.state.items} />
+          <List 
+            items={this.state.items} 
+            removeItemFromList={ (itemToBeRemoved) => this.removeItemFromList(itemToBeRemoved) } 
+          />
         </ol>
         <button onClick={ () => this.addItemToList() }>Add Item to List</button>
       </div>

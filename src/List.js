@@ -10,7 +10,11 @@ class List extends React.Component {
     // REFERENCE (LOOPS WITH JSX): https://flaviocopes.com/react-how-to-loop/
 
     for (var i = 0; i < this.props.items.length; i++) {
-      listItemElements.push(<Item item={this.props.items[i]} />);
+      //var Item = <Item item={this.props.items[i]} />
+      listItemElements.push(<Item 
+                              item={this.props.items[i]} 
+                              removeItemFromList={ (itemToBeRemoved) => this.props.removeItemFromList(itemToBeRemoved) }
+                            />);
     }
 
     return(
