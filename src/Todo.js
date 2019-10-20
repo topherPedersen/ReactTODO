@@ -55,42 +55,34 @@ class Todo extends React.Component {
         <div>
 
           <h1>React TODO List App</h1>
+
           <nav>
-            <Link to="/">
-              <button>TODO List</button>
-            </Link>
-            <Link to="/dank-memes">
-              <button>Dank Memes</button>
-            </Link>
-            <Link to="/cat-videos">
-              <button>Cat Videos</button>
-            </Link>
+            <ul>
+              <li>
+                <Link to="/">TODO List</Link>
+              </li>
+              <li>
+                <Link to="/dankmemes">Dank Memes</Link>
+              </li>
+              <li>
+                <Link to="/catvideos">Cat Videos</Link>
+              </li>
+            </ul>
           </nav>
 
           <Switch>
 
+            <Route path="/dankmemes">
+              <DankMemes />
+            </Route>
+
+            <Route path="/catvideos">
+              <CatVideos />
+            </Route>
+
             <Route path="/">
-              <ol>
-                <List 
-                  items={this.state.items} 
-                  removeItemFromList={ (itemToBeRemoved) => this.removeItemFromList(itemToBeRemoved) } 
-                />
-              </ol>
-              <button onClick={ () => this.addItemToList() }>Add Item to List</button>
+              <Home />
             </Route>
-
-            <Route path="/dank-memes">
-              <div>
-                <h3>Dank Memes Go Here</h3>
-              </div>
-            </Route>
-
-            <Route path="/cat-videos">
-              <div>
-                <h3>Cat Videos Go Here</h3>
-              </div>
-            </Route>
-
 
           </Switch>
 
@@ -99,5 +91,28 @@ class Todo extends React.Component {
     );
   }
 }
+
+function Home() {
+  return <h3>Todo List Goes Here</h3>;
+}
+
+function DankMemes() {
+  return <h3>Dank Memes Go Here</h3>;
+}
+
+function CatVideos() {
+  return <h3>Cat Videos Go Here</h3>;
+}
+
+/*
+
+              <ol>
+                <List 
+                  items={this.state.items} 
+                  removeItemFromList={ (itemToBeRemoved) => this.removeItemFromList(itemToBeRemoved) } 
+                />
+              </ol>
+              <button onClick={ () => this.addItemToList() }>Add Item to List</button>
+*/
 
 export default Todo;
