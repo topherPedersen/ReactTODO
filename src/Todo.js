@@ -81,7 +81,15 @@ class Todo extends React.Component {
             </Route>
 
             <Route path="/">
-              <Home />
+              <div>
+                <ol>
+                  <List 
+                    items={this.state.items} 
+                    removeItemFromList={ (itemToBeRemoved) => this.removeItemFromList(itemToBeRemoved) } 
+                  />
+                </ol>
+                <button onClick={ () => this.addItemToList() }>Add Item to List</button>
+              </div>
             </Route>
 
           </Switch>
