@@ -1,10 +1,10 @@
 import React from 'react';
 import List from './List';
+import './Todo.css';
 
 class Todo extends React.Component {
   constructor(props) {
     super(props);
-    //this.removeItemFromList = this.removeItemFromList.bind(this);
     this.state = {
       items: new Array(), 
     };
