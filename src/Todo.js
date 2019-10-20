@@ -23,6 +23,7 @@ class Todo extends React.Component {
 
   removeItemFromList(itemToBeRemoved) {
     alert(itemToBeRemoved);
+    alert(this.state.items[0]);
   }
 
   render() {
