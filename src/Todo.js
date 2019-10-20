@@ -22,8 +22,25 @@ class Todo extends React.Component {
   }
 
   removeItemFromList(itemToBeRemoved) {
-    alert(itemToBeRemoved);
-    alert(this.state.items[0]);
+    // Create a new array which will contain an updated
+    // version of our todo list items excluding the 'itemToBeRemoved'
+    var newList = new Array();
+    // Loop through the previous version of the todo-list
+    // comparing all items in the list with the 'itemToBeRemoved'
+    var numberOfItems = this.state.items.length;
+    for (var i = 0; i < numberOfItems; i++) {
+      // If the item from the previous todo-list does not match
+      // the 'itemToBeRemoved', add it to the new todo-list
+      if (this.state.items[i] !== itemToBeRemoved) {
+        var indexOfNextItem = newList.length;
+        newList[indexOfNextItem] = this.state.items[i];    
+      }
+    }
+    // Replace the old todo-list with the new todo-list
+    // which excludes the 'itemToBeRemoved'
+    this.setState({
+      items: newList,
+    });
   }
 
   render() {
